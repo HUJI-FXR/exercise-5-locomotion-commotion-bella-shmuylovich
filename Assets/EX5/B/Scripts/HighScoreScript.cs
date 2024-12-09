@@ -1,7 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using TMPro;
+using TMPro.TextMeshProUGUI;
 using Unity.VisualScripting.Antlr3.Runtime.Tree;
 using UnityEngine;
 
