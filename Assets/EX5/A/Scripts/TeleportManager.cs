@@ -34,7 +34,7 @@ public int allowedTeleports = 3;
         teleportCounter++;
         Debug.Log("Teleportation #" + teleportCounter + " has ended");
 
-        if (teleportCounter > allowedTeleports)
+        if (teleportCounter >= allowedTeleports)
         {
             teleportationProvider.enabled = false;
         }
