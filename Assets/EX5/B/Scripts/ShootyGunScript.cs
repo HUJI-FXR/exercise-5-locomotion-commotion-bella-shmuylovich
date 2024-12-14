@@ -3,6 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
+using UnityEngine.XR.Interaction.Toolkit;
+using UnityEngine.InputSystem;
 
 public class ShootyGunScript : MonoBehaviour
 {
@@ -11,10 +13,24 @@ public class ShootyGunScript : MonoBehaviour
     [SerializeField] private GameObject bullet;
     [SerializeField] private Transform spawnTransform;
     [SerializeField] private float bulletSpeed;
+    [SerializeField] private GameObject rightController;
+    
+    private InputAction _shoot;
 
     #endregion
 
     #region MONOBEHAVIOUR
+
+    private void OnEnable()
+    {
+        _shoot = new XRIDefaultInputActions().XRIRightHandInteraction.Activate;
+        _shoot.Enable();
+    }
+
+    private void OnDisable()
+    {
+        _shoot.Disable();
+    }
 
     private void Start()
     {
@@ -33,13 +49,13 @@ public class ShootyGunScript : MonoBehaviour
 
     private void CheckInput()
     {
-        if (Input.GetMouseButtonUp(0)) Shoot();
+        if (_shoot.WasPressedThisFrame()) Shoot();
     }
 
     private void Shoot()
     {
         GameObject shot = Instantiate(bullet, spawnTransform.transform.position, spawnTransform.transform.rotation);
-        shot.GetComponent<Rigidbody>().velocity = transform.forward * bulletSpeed * Time.deltaTime;
+        shot.GetComponent<Rigidbody>().velocity = rightController.transform.forward * bulletSpeed * Time.deltaTime;
         Destroy(shot, 5f);
         // Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         // Vector3 targetPoint;
