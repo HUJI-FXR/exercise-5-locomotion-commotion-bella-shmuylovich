@@ -651,6 +651,7 @@ MonoBehaviour:
   bullet: {fileID: 904214768547465039, guid: 9e950ffb31d0d544b92eeaac98aac549, type: 3}
   spawnTransform: {fileID: 0}
   bulletSpeed: 2000
+  rightController: {fileID: 0}
 --- !u!1 &203296565
 GameObject:
   m_ObjectHideFlags: 0
@@ -2263,7 +2264,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6803edce0201f574f923fd9d10e5b30a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_InteractionManager: {fileID: 0}
+  m_InteractionManager: {fileID: 535544033}
   m_InteractionLayerMask:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -3419,6 +3420,7 @@ MonoBehaviour:
   bullet: {fileID: 904214768547465039, guid: 9e950ffb31d0d544b92eeaac98aac549, type: 3}
   spawnTransform: {fileID: 903824544}
   bulletSpeed: 2000
+  rightController: {fileID: 903824543}
 --- !u!1 &1103073314
 GameObject:
   m_ObjectHideFlags: 0
@@ -3859,7 +3861,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6803edce0201f574f923fd9d10e5b30a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_InteractionManager: {fileID: 0}
+  m_InteractionManager: {fileID: 535544033}
   m_InteractionLayerMask:
     serializedVersion: 2
     m_Bits: 4294967295
